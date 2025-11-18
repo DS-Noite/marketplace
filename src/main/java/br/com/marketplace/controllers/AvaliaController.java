@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/api/contrata")
+@RequestMapping("/api/avalia")
 public class AvaliaController {
 
     private final AvaliaService avaliaService;
@@ -27,7 +27,7 @@ public class AvaliaController {
     }
 
     //Buscar
-    @GetMapping({"{/id}"})
+    @GetMapping({"/{id}"})
     public ResponseEntity buscar(@PathVariable Long id){
         Avalia aux = this.avaliaService.buscarPorId(id);
         return ResponseEntity.ok(aux);
@@ -41,7 +41,7 @@ public class AvaliaController {
     }
 
     //Deletar
-    @DeleteMapping({"{/id}"})
+    @DeleteMapping("/{id}")
     public ResponseEntity deletar(@PathVariable Long id){
         this.avaliaService.deletar(id);
         return ResponseEntity.noContent().build();

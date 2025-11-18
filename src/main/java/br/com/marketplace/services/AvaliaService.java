@@ -10,8 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class AvaliaService {
-
-    private AvaliaRepository avaliaRepository;
+    private final AvaliaRepository avaliaRepository;
 
     //Criar Avaliação
     public Avalia criar(Avalia avalia){

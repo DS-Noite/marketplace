@@ -28,11 +28,12 @@ public class Contrata {
 
     @ManyToOne
     @JoinColumn(name = "ID_Cliente")
-    private Pessoa cliente;
+    private Cliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "ID_Profissional")
     private Profissional profissional;
+    @ManyToOne
     private Servico servico;
 
     @OneToOne

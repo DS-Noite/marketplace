@@ -6,18 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
+//@Table(name = "PESSOA") // A tabela não será criada, mas a anotação é necessária.
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
 public abstract class Pessoa {
     @Id
-    @Column(name = "pessoa_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.PERSIST)

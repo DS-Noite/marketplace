@@ -1,22 +1,17 @@
 package br.com.marketplace.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+//@Table(name = "CLIENTE_PF")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-
-public class ClientePF extends Pessoa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Getter @Setter
+public class ClientePF extends Cliente {
     private String cpf;
 }

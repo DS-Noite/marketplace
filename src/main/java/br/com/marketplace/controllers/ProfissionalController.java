@@ -25,7 +25,7 @@ public class ProfissionalController {
     }
 
     //Buscar
-    @GetMapping({"{/id}"})
+    @GetMapping("/{id}")
     public ResponseEntity buscar(@PathVariable String cnpj){
         Profissional aux = this.profissionalService.buscarPorId(cnpj);
         return ResponseEntity.ok(aux);
@@ -39,7 +39,7 @@ public class ProfissionalController {
     }
 
     //Deletar
-    @DeleteMapping({"{/id}"})
+    @DeleteMapping({"/{id}"})
     public ResponseEntity deletar(@PathVariable String cnpj){
         this.profissionalService.deletar(cnpj);
         return ResponseEntity.noContent().build();

@@ -18,9 +18,8 @@ public class Avalia {
     @Column(name = "avalia_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String comentario;
-    private String nota;
+    private double nota;
     private LocalDate dataAvaliacao;
 
 

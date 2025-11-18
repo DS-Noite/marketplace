@@ -12,10 +12,9 @@ import lombok.Setter;
 @Getter @Setter
 
 public class Profissional extends Pessoa {
-    @Id
     private String cnpj;
 
     private String classificacao;
     private String especialidade;
-    private Pessoa pessoa;
+
 }
